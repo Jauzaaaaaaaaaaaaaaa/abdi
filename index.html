@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdi — Latihan SKD CPNS</title>
+<meta name="description" content="Latihan soal SKD CPNS gratis: pembahasan untuk setiap pilihan jawaban, tryout berwaktu dengan penilaian seperti SKD, dan nilai yang langsung dibandingkan dengan ambang batas.">
+<meta name="theme-color" content="#ebecee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2b2b2b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="ikon.svg" type="image/svg+xml">
+<script>try{var s=JSON.parse(localStorage.getItem('abdi:setelan')||'{}'),r=document.documentElement;if(s.tema&&s.tema!=='otomatis')r.dataset.tema=s.tema;if(s.skala)r.style.setProperty('--skala',s.skala)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="css/abdi.css">
+<script defer src="data/indeks.js"></script>
+<script defer src="js/inti.js"></script>
+<script defer src="js/beranda.js"></script>
+</head>
+<body>
+
+<header class="kepala">
+  <div class="wadah">
+    <a class="merek" href="index.html" aria-label="Abdi, ke beranda">abdi<i>.</i></a>
+    <nav class="nav" aria-label="Utama">
+      <a href="latihan.html">Latihan</a>
+      <a href="tryout.html">Tryout</a>
+      <a href="ebook.html">E-Book</a>
+      <a class="opsional" href="#skor">Cara menilai</a>
+    </nav>
+    <div class="alat">
+      <details class="setel">
+        <summary class="tombol-ikon" aria-label="Setelan tampilan" title="Setelan tampilan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 12h3M11 12h9M4 17h11M19 17h1"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+        </summary>
+        <div class="setel-panel">
+          <div class="setel-baris"><span>Ukuran huruf</span>
+            <div class="setel-pilihan" data-setel="skala"><button type="button" data-nilai="0.9375">Kecil</button><button type="button" data-nilai="1">Sedang</button><button type="button" data-nilai="1.125">Besar</button><button type="button" data-nilai="1.25">Lebih</button></div></div>
+          <div class="setel-baris"><span>Tema</span>
+            <div class="setel-pilihan" data-setel="tema"><button type="button" data-nilai="otomatis">Otomatis</button><button type="button" data-nilai="terang">Terang</button><button type="button" data-nilai="gelap">Gelap</button></div></div>
+          <div class="setel-baris"><span>Istirahat mata</span>
+            <div class="setel-pilihan" data-setel="istirahat"><button type="button" data-nilai="true">Ingatkan</button><button type="button" data-nilai="false">Jangan</button></div>
+            <p class="setel-ket">Saat latihan, tiap 30 menit muncul notif kecil di atas untuk istirahat sejenak. Hilang sendiri, tidak mengganggu soal.</p></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wadah">
+      <div class="hero-teks">
+        <p class="label">Latihan SKD CPNS · gratis · tanpa akun</p>
+        <h1 class="hero-judul">
+          <span class="baris"><span>Latihan SKD</span></span>
+          <span class="baris"><span><em>sampai</em> lolos<span class="titik">.</span></span></span>
+        </h1>
+        <p class="hero-sub">Soal dengan pembahasan untuk setiap pilihan jawaban, tryout berwaktu yang dinilai seperti SKD, dan nilai yang langsung dibandingkan dengan ambang batas.</p>
+        <div class="hero-aksi">
+          <a class="tombol tombol-utama tombol-besar" href="latihan.html" data-magnet>Mulai latihan <span class="panah">→</span></a>
+          <a class="tombol tombol-garis tombol-besar" href="tryout.html" data-magnet>Coba tryout</a>
+        </div>
+        <dl class="hero-angka">
+          <div><dt>soal terverifikasi</dt><dd data-total-soal>0</dd></div>
+          <div><dt>soal di SKD</dt><dd>110</dd></div>
+          <div><dt>menit pengerjaan</dt><dd>100</dd></div>
+        </dl>
+      </div>
+      <div class="tumpukan" aria-hidden="true">
+        <div class="kartu-hias kartu-hias--3"></div>
+        <div class="kartu-hias kartu-hias--2"></div>
+        <div class="kartu-hias kartu-hias--1">
+          <div class="kh-atas"><span>TIU · Deret bertingkat</span><span>00:41</span></div>
+          <p class="kh-soal">3, 5, 9, 15, 23, <b>?</b></p>
+          <ol class="kh-opsi"><li>31</li><li class="pas">33</li><li>29</li><li>35</li><li>37</li></ol>
+          <p class="kh-bahas">Selisihnya +2, +4, +6, +8, jadi berikutnya +10: 23 + 10 = 33.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pita" aria-label="Materi SKD">
+    <div class="pita-jalur" aria-hidden="true">
+      <span>Deret angka</span><i>✦</i><span>Hitung cepat</span><i>✦</i><span>Perbandingan</span><i>✦</i><span>Persentase</span><i>✦</i><span>Rata-rata</span><i>✦</i><span>Pancasila</span><i>✦</i><span>UUD 1945</span><i>✦</i><span>Bela negara</span><i>✦</i><span>Pelayanan publik</span><i>✦</i><span>Jejaring kerja</span><i>✦</i>
+      <span>Deret angka</span><i>✦</i><span>Hitung cepat</span><i>✦</i><span>Perbandingan</span><i>✦</i><span>Persentase</span><i>✦</i><span>Rata-rata</span><i>✦</i><span>Pancasila</span><i>✦</i><span>UUD 1945</span><i>✦</i><span>Bela negara</span><i>✦</i><span>Pelayanan publik</span><i>✦</i><span>Jejaring kerja</span><i>✦</i>
+    </div>
+  </section>
+
+  <section class="bagian" id="subtes">
+    <div class="wadah">
+      <header class="bagian-kepala muncul">
+        <p class="label">Tiga subtes SKD</p>
+        <h2 class="judul-bagian">Kenali <em>medannya</em>.</h2>
+        <p class="pengantar">SKD berisi 110 soal yang dikerjakan dalam 100 menit. Tiap subtes punya nilai ambang sendiri: kalau satu saja di bawah ambang, kamu belum lolos, setinggi apa pun totalnya.</p>
+      </header>
+      <ol class="subtes-daftar muncul">
+        <li><a class="subtes" href="latihan.html?subtes=twk"><span class="subtes-no">01</span><span class="subtes-nama"><b>TWK</b><em>Wawasan Kebangsaan</em></span><span class="subtes-info">30 soal · maks 150 · ambang 65</span><span class="subtes-status" data-status="skd.twk">Segera</span><span class="subtes-panah" aria-hidden="true">→</span></a></li>
+        <li><a class="subtes" href="latihan.html?subtes=tiu"><span class="subtes-no">02</span><span class="subtes-nama"><b>TIU</b><em>Intelegensia Umum</em></span><span class="subtes-info">35 soal · maks 175 · ambang 80</span><span class="subtes-status" data-status="skd.tiu">Memuat…</span><span class="subtes-panah" aria-hidden="true">→</span></a></li>
+        <li><a class="subtes" href="latihan.html?subtes=tkp"><span class="subtes-no">03</span><span class="subtes-nama"><b>TKP</b><em>Karakteristik Pribadi</em></span><span class="subtes-info">45 soal · maks 225 · ambang 166</span><span class="subtes-status" data-status="skd.tkp">Segera</span><span class="subtes-panah" aria-hidden="true">→</span></a></li>
+      </ol>
+      <p class="catatan muncul">Isi sekarang: TIU numerik (deret, hitung cepat, perbandingan, persentase, rata-rata), TWK pilar negara dari teks UUD NRI 1945 dan UU 24/2009 (Pancasila, Pembukaan, bunyi dan letak pasal, lembaga negara, hak warga, amandemen, bendera, bahasa, lambang, dan lagu kebangsaan), dan TKP enam aspek. Soal TWK berbasis kasus serta TIU verbal dan figural masih disiapkan, dan baru tampil setelah lolos pemeriksaan.</p>
+      <p class="label subtes-lanjut muncul">Setelah lolos SKD</p>
+      <ol class="subtes-daftar muncul">
+        <li><a class="subtes" href="latihan.html?subtes=skb"><span class="subtes-no">04</span><span class="subtes-nama"><b>SKB</b><em>Teknik Informatika</em></span><span class="subtes-info">sesuai jabatan · mis. Pranata Komputer</span><span class="subtes-status" data-status="skb.ti">Memuat…</span><span class="subtes-panah" aria-hidden="true">→</span></a></li>
+      </ol>
+      <p class="catatan muncul">SKB menguji bidang jabatan yang dilamar. Kisi-kisi resmi SKB 2026 belum terbit, jadi latihan ini mengikuti bidang yang lazim diujikan untuk jabatan TI: sistem bilangan, subnetting, query SQL, membaca kode, algoritma, jaringan, keamanan informasi, rekayasa perangkat lunak, serta SPBE dan regulasinya (UU PDP, UU ITE, Satu Data Indonesia).</p>
+    </div>
+  </section>
+
+  <section class="bagian" id="cara">
+    <div class="wadah cara-grid">
+      <div class="cara-kiri muncul">
+        <p class="label">Cara kerjanya</p>
+        <h2 class="judul-bagian">Latihan yang <em>terasa</em> kemajuannya.</h2>
+        <p class="pengantar">Tidak perlu daftar akun. Kemajuanmu tersimpan di perangkat ini.</p>
+      </div>
+      <ol class="cara-tumpuk">
+        <li class="cara-kartu" style="--i:0"><span class="cara-no">01</span><h3>Pilih materi</h3><p>Pilih subtes dan topik, lalu atur tingkat kesulitan dan jumlah soal.</p></li>
+        <li class="cara-kartu" style="--i:1"><span class="cara-no">02</span><h3>Jawab, langsung paham</h3><p>Buntu? Buka tombol cara cepat untuk tekniknya tanpa membocorkan jawaban. Setelah menjawab, pembahasan langkah demi langkah menjelaskan juga kenapa pilihan lain menjebak.</p></li>
+        <li class="cara-kartu" style="--i:2"><span class="cara-no">03</span><h3>Uji dengan tryout</h3><p>Waktu berjalan seperti ujian sungguhan, ada tanda ragu-ragu, dan nilainya dihitung seperti SKD.</p></li>
+        <li class="cara-kartu" style="--i:3"><span class="cara-no">04</span><h3>Lihat posisimu</h3><p>Nilai tiap subtes dibandingkan langsung dengan ambang batas, lengkap dengan tinjauan soal yang salah.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="bagian" id="skor">
+    <div class="wadah">
+      <header class="bagian-kepala muncul">
+        <p class="label">Cara menilai SKD</p>
+        <h2 class="judul-bagian">Tiga angka yang <em>menentukan</em>.</h2>
+        <p class="pengantar">TWK dan TIU: benar 5, salah atau kosong 0. TKP: setiap pilihan bernilai 1 sampai 5, dan yang kosong bernilai 0.</p>
+      </header>
+      <div class="skor-grid">
+        <article class="skor-kartu muncul"><p class="skor-sub">TWK · AMBANG</p><p class="skor-angka" data-hitung="65">65</p><p class="skor-maks">dari nilai maksimal 150</p><div class="skor-batang"><i style="--isi:.433"></i></div><ul class="skor-rinci"><li>30 soal</li><li>Benar 5, salah 0</li></ul></article>
+        <article class="skor-kartu muncul"><p class="skor-sub">TIU · AMBANG</p><p class="skor-angka" data-hitung="80">80</p><p class="skor-maks">dari nilai maksimal 175</p><div class="skor-batang"><i style="--isi:.457"></i></div><ul class="skor-rinci"><li>35 soal</li><li>Benar 5, salah 0</li></ul></article>
+        <article class="skor-kartu muncul"><p class="skor-sub">TKP · AMBANG</p><p class="skor-angka" data-hitung="166">166</p><p class="skor-maks">dari nilai maksimal 225</p><div class="skor-batang"><i style="--isi:.738"></i></div><ul class="skor-rinci"><li>45 soal</li><li>Tiap pilihan bernilai 1–5</li></ul></article>
+      </div>
+      <p class="catatan muncul">Nilai ambang di atas mengacu pada Kepmen PANRB No. 321 Tahun 2024, yang masih dirujuk sampai pengumuman CPNS 2026 terbit (dicek 16 November 2026). Pastikan lagi di <a href="https://sscasn.bkn.go.id" rel="noopener" target="_blank">sscasn.bkn.go.id</a>.</p>
+    </div>
+  </section>
+
+  <section class="bagian" id="jujur">
+    <div class="wadah jujur-grid">
+      <h2 class="judul-bagian muncul">Dibuat supaya <em>bisa dipercaya</em>.</h2>
+      <ul class="jujur-daftar muncul">
+        <li><b>Kunci dicek ulang.</b> Soal TIU numerik dihitung ulang oleh program terpisah. Soal TWK dicocokkan kata demi kata ke teks UUD NRI 1945 dan UU 24/2009, dan asal ayat yang disebut di pembahasan (naskah asli atau perubahan keberapa) sudah dicocokkan dengan naskah asli dan naskah Perubahan I–IV. Soal yang gagal tidak pernah tampil.</li>
+        <li><b>TKP memakai rubrik terbuka.</b> Kunci resmi TKP tidak dipublikasikan BKN. Nilai 1–5 di Abdi mengikuti rubrik yang dijelaskan di setiap pembahasan: 5 proaktif dan tuntas sesuai aturan, sampai 1 yang melanggar nilai ASN. Pilihan terbaik sengaja tidak selalu yang paling panjang, jadi menebak dari panjang kalimat tidak membantu.</li>
+        <li><b>Pembahasan untuk setiap pilihan.</b> Bukan hanya kunci, tapi juga kenapa pilihan lain menjebak, supaya kesalahan yang sama tidak terulang.</li>
+        <li><b>Nyaman dipakai lama.</b> Warna kertas hangat, kontras yang tidak menyilaukan, ukuran huruf yang bisa diatur, mode gelap, dan pengingat istirahat mata.</li>
+        <li><b>Bukan situs resmi.</b> Abdi tidak berafiliasi dengan BKN atau KemenPAN-RB. Pendaftaran CPNS hanya di sscasn.bkn.go.id dan tidak dipungut biaya.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="penutup">
+    <div class="wadah">
+      <p class="penutup-besar muncul">Satu soal hari ini<br><em>lebih baik</em> dari nol.</p>
+      <a class="tombol tombol-utama tombol-besar" href="latihan.html" data-magnet>Mulai latihan <span class="panah">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="kaki">
+  <div class="wadah kaki-grid">
+    <div><a class="merek" href="index.html">abdi<i>.</i></a><p>Latihan SKD CPNS gratis. Bukan situs resmi pemerintah.</p></div>
+    <div><p>Info dan pendaftaran resmi hanya di <a href="https://sscasn.bkn.go.id" rel="noopener" target="_blank">sscasn.bkn.go.id</a>.</p><p>Bank soal diperbarui <span data-dibuat>–</span>.</p></div>
+  </div>
+</footer>
+</body>
+</html>

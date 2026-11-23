@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tryout — Abdi</title>
+<meta name="description" content="Tryout SKD CPNS berwaktu dengan penilaian seperti SKD dan tinjauan jawaban.">
+<meta name="theme-color" content="#ebecee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2b2b2b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="ikon.svg" type="image/svg+xml">
+<script>try{var s=JSON.parse(localStorage.getItem('abdi:setelan')||'{}'),r=document.documentElement;if(s.tema&&s.tema!=='otomatis')r.dataset.tema=s.tema;if(s.skala)r.style.setProperty('--skala',s.skala)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="css/abdi.css">
+<script defer src="data/indeks.js"></script>
+<script defer src="js/inti.js"></script>
+<script defer src="js/tryout.js"></script>
+</head>
+<body>
+
+<header class="kepala">
+  <div class="wadah">
+    <a class="merek" href="index.html" aria-label="Abdi, ke beranda">abdi<i>.</i></a>
+    <nav class="nav" aria-label="Utama">
+      <a href="latihan.html">Latihan</a>
+      <a href="tryout.html" aria-current="page">Tryout</a>
+      <a href="ebook.html">E-Book</a>
+      <a class="opsional" href="index.html#skor">Cara menilai</a>
+    </nav>
+    <div class="alat">
+      <details class="setel">
+        <summary class="tombol-ikon" aria-label="Setelan tampilan" title="Setelan tampilan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 12h3M11 12h9M4 17h11M19 17h1"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+        </summary>
+        <div class="setel-panel">
+          <div class="setel-baris"><span>Ukuran huruf</span>
+            <div class="setel-pilihan" data-setel="skala"><button type="button" data-nilai="0.9375">Kecil</button><button type="button" data-nilai="1">Sedang</button><button type="button" data-nilai="1.125">Besar</button><button type="button" data-nilai="1.25">Lebih</button></div></div>
+          <div class="setel-baris"><span>Tema</span>
+            <div class="setel-pilihan" data-setel="tema"><button type="button" data-nilai="otomatis">Otomatis</button><button type="button" data-nilai="terang">Terang</button><button type="button" data-nilai="gelap">Gelap</button></div></div>
+          <div class="setel-baris"><span>Istirahat mata</span>
+            <div class="setel-pilihan" data-setel="istirahat"><button type="button" data-nilai="true">Ingatkan</button><button type="button" data-nilai="false">Jangan</button></div>
+            <p class="setel-ket">Pengingat hanya muncul saat latihan, tidak saat tryout, supaya rasanya seperti ujian sungguhan.</p></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main class="halaman">
+  <div class="wadah">
+
+    <section id="awal">
+      <p class="label">Tryout</p>
+      <h1 class="judul-halaman">Uji diri <em>dengan waktu</em>.</h1>
+      <p class="pengantar">Kerjakan seperti di hari ujian: waktu terus berjalan, kamu boleh melompati soal dan menandainya ragu-ragu, lalu nilainya dihitung seperti SKD.</p>
+      <div class="lanjutkan" id="lanjutkan" hidden>
+        <p id="lanjutkan-teks"></p>
+        <button type="button" class="tombol tombol-tinta" id="lanjutkan-tombol">Lanjutkan</button>
+      </div>
+      <div class="mode-grid">
+        <article class="mode-kartu">
+          <p class="label" style="color:var(--di-tinta-redup)">Simulasi penuh</p>
+          <h2>SKD lengkap</h2>
+          <p class="mode-rinci">110 soal · 100 menit · TWK 30, TIU 35, TKP 45</p>
+          <p class="mode-ket" id="ket-skd">Memeriksa ketersediaan soal…</p>
+          <button type="button" class="tombol tombol-utama" id="mulai-skd" disabled>Mulai SKD lengkap</button>
+        </article>
+        <article class="mode-kartu">
+          <p class="label">Tersedia sekarang</p>
+          <h2>Tryout TIU</h2>
+          <p class="mode-rinci">35 soal · 32 menit · tempo yang sama dengan SKD</p>
+          <p class="mode-ket" id="ket-tiu">Memeriksa ketersediaan soal…</p>
+          <button type="button" class="tombol tombol-utama" id="mulai-tiu" disabled>Mulai tryout TIU <span class="panah">→</span></button>
+        </article>
+      </div>
+      <ul class="aturan">
+        <li><b>Penilaian</b>TWK dan TIU: benar 5, salah atau kosong 0. TKP: tiap pilihan bernilai 1–5.</li>
+        <li><b>Waktu</b>Terus berjalan dan tersimpan di perangkat. Kalau halaman tertutup, tryout bisa dilanjutkan.</li>
+        <li><b>Cara cepat</b>Boleh dibuka bila buntu, tetapi di SKD asli tidak ada. Hasil tryout menyebut berapa soal yang kamu kerjakan dengan bantuan itu.</li>
+        <li><b>Papan ketik</b><kbd>A</kbd>–<kbd>E</kbd> memilih, <kbd>←</kbd> <kbd>→</kbd> pindah soal, <kbd>R</kbd> tandai ragu-ragu, <kbd>H</kbd> cara cepat.</li>
+      </ul>
+      <section class="riwayat" id="riwayat" hidden>
+        <p class="label">Riwayat tryout</p>
+        <svg class="garis-tren" id="tren" viewBox="0 0 300 64" preserveAspectRatio="none" aria-label="Tren nilai tryout TIU; garis putus-putus adalah nilai ambang" role="img" hidden></svg>
+        <ul class="riwayat-daftar" id="riwayat-daftar"></ul>
+      </section>
+    </section>
+
+    <section id="ujian" class="ujian" hidden>
+      <div class="ujian-utama">
+        <div class="ujian-atas">
+          <span id="u-nomor">Soal 1</span><span class="pil" id="u-subtes">TIU</span>
+          <span class="waktu-kecil" id="u-waktu-kecil">00:00</span>
+          <button type="button" class="tombol-cepat" id="u-tombol-cepat" aria-expanded="false" aria-controls="u-cepat" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            <span>Cara cepat</span>
+          </button>
+        </div>
+        <div class="soal-teks" id="u-teks"></div>
+        <div class="cepat" id="u-cepat" hidden>
+          <p class="cepat-judul">Cara cepat untuk soal ini</p>
+          <div class="cepat-isi" id="u-cepat-isi"></div>
+          <p class="cepat-catatan">Di SKD asli bantuan ini tidak ada. Soal yang kamu buka cara cepatnya ditandai di hasil tryout.</p>
+        </div>
+        <ol class="opsi-daftar" id="u-opsi"></ol>
+        <div class="ujian-aksi">
+          <button type="button" class="tombol tombol-garis" id="u-prev">← Sebelumnya</button>
+          <button type="button" class="tombol tombol-garis" id="u-ragu" aria-pressed="false">Ragu-ragu</button>
+          <button type="button" class="tombol tombol-utama" id="u-next">Berikutnya <span class="panah">→</span></button>
+        </div>
+      </div>
+      <aside class="ujian-sisi" aria-label="Navigasi soal">
+        <div class="waktu-kotak"><p class="label">Sisa waktu</p><p class="waktu" id="u-waktu">00:00</p></div>
+        <p class="kecil" id="u-progres" style="font-size:.9rem;color:var(--teks-2)"></p>
+        <div class="peta" id="u-peta"></div>
+        <ul class="legenda"><li><i class="dijawab"></i>Dijawab</li><li><i class="ragu"></i>Ragu-ragu</li><li><i></i>Belum</li></ul>
+        <button type="button" class="tombol tombol-tinta tombol-lebar" id="u-selesai">Selesai dan lihat nilai</button>
+      </aside>
+    </section>
+
+    <section id="hasil" class="ringkas" hidden>
+      <p class="label">Hasil tryout</p>
+      <p class="angka-besar"><span id="h-total">0</span><small id="h-maks">/ 0</small></p>
+      <p class="pengantar" id="h-pesan"></p>
+      <p style="margin-top:8px;color:var(--redup)">Waktu terpakai <b id="h-waktu" style="color:var(--teks)">00:00</b></p>
+      <div class="hasil-subtes" id="h-subtes"></div>
+      <div class="baris-aksi">
+        <button type="button" class="tombol tombol-utama" id="lagi">Tryout lagi</button>
+        <a class="tombol tombol-garis" href="latihan.html">Latihan per topik</a>
+      </div>
+      <p class="label">Tinjau jawaban</p>
+      <div class="segmen tab-tinjau" id="tab-tinjau">
+        <button type="button" data-saring="semua" aria-pressed="true">Semua</button>
+        <button type="button" data-saring="salah" aria-pressed="false">Salah</button>
+        <button type="button" data-saring="kosong" aria-pressed="false">Kosong</button>
+      </div>
+      <div class="tinjau" id="h-tinjau"></div>
+    </section>
+
+  </div>
+</main>
+
+<dialog class="konfirmasi" id="konfirmasi">
+  <h2>Selesaikan tryout?</h2>
+  <p id="konf-teks"></p>
+  <div class="baris-aksi" style="margin:22px 0 0">
+    <button type="button" class="tombol tombol-garis" id="konf-batal">Kembali ke soal</button>
+    <button type="button" class="tombol tombol-utama" id="konf-selesai">Selesai</button>
+  </div>
+</dialog>
+
+<footer class="kaki">
+  <div class="wadah kaki-grid">
+    <p>Abdi bukan situs resmi pemerintah. Info resmi: <a href="https://sscasn.bkn.go.id" rel="noopener" target="_blank">sscasn.bkn.go.id</a>.</p>
+    <p>Bank soal diperbarui <span data-dibuat>–</span>.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latihan — Abdi</title>
+<meta name="description" content="Latihan soal SKD CPNS per topik dengan pembahasan langsung.">
+<meta name="theme-color" content="#ebecee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2b2b2b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="ikon.svg" type="image/svg+xml">
+<script>try{var s=JSON.parse(localStorage.getItem('abdi:setelan')||'{}'),r=document.documentElement;if(s.tema&&s.tema!=='otomatis')r.dataset.tema=s.tema;if(s.skala)r.style.setProperty('--skala',s.skala)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="css/abdi.css">
+<script defer src="data/indeks.js"></script>
+<script defer src="js/inti.js"></script>
+<script defer src="js/latihan.js"></script>
+</head>
+<body>
+
+<header class="kepala">
+  <div class="wadah">
+    <a class="merek" href="index.html" aria-label="Abdi, ke beranda">abdi<i>.</i></a>
+    <nav class="nav" aria-label="Utama">
+      <a href="latihan.html" aria-current="page">Latihan</a>
+      <a href="tryout.html">Tryout</a>
+      <a href="ebook.html">E-Book</a>
+      <a class="opsional" href="index.html#skor">Cara menilai</a>
+    </nav>
+    <div class="alat">
+      <details class="setel">
+        <summary class="tombol-ikon" aria-label="Setelan tampilan" title="Setelan tampilan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 12h3M11 12h9M4 17h11M19 17h1"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+        </summary>
+        <div class="setel-panel">
+          <div class="setel-baris"><span>Ukuran huruf</span>
+            <div class="setel-pilihan" data-setel="skala"><button type="button" data-nilai="0.9375">Kecil</button><button type="button" data-nilai="1">Sedang</button><button type="button" data-nilai="1.125">Besar</button><button type="button" data-nilai="1.25">Lebih</button></div></div>
+          <div class="setel-baris"><span>Tema</span>
+            <div class="setel-pilihan" data-setel="tema"><button type="button" data-nilai="otomatis">Otomatis</button><button type="button" data-nilai="terang">Terang</button><button type="button" data-nilai="gelap">Gelap</button></div></div>
+          <div class="setel-baris"><span>Istirahat mata</span>
+            <div class="setel-pilihan" data-setel="istirahat"><button type="button" data-nilai="true">Ingatkan</button><button type="button" data-nilai="false">Jangan</button></div>
+            <p class="setel-ket">Saat latihan, tiap 30 menit muncul notif kecil di atas untuk istirahat sejenak. Hilang sendiri, tidak mengganggu soal.</p></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main class="halaman">
+  <div class="wadah">
+
+    <section id="pilih">
+      <p class="label">Latihan</p>
+      <h1 class="judul-halaman">Mau latihan <em>apa</em> hari ini?</h1>
+      <div class="pilih-grid">
+        <fieldset class="kotak"><legend>Subtes</legend><div class="segmen" id="pilih-subtes"></div></fieldset>
+        <fieldset class="kotak"><legend>Jumlah soal</legend><div class="segmen" id="pilih-jumlah"></div>
+          <label class="jumlah-bebas">Atau tulis sendiri <input type="number" id="jumlah-bebas" min="1" step="1" inputmode="numeric"> soal</label></fieldset>
+        <fieldset class="kotak lebar-penuh"><legend>Topik <button type="button" class="tautan" id="pilih-semua">pilih semua</button></legend><div class="chip-daftar" id="pilih-topik"></div></fieldset>
+        <fieldset class="kotak"><legend>Tingkat kesulitan</legend><div class="segmen" id="pilih-tingkat"></div></fieldset>
+        <fieldset class="kotak"><legend>Urutan soal</legend>
+          <label class="centang"><input type="checkbox" id="pilih-salah"><span>Ulangi juga soal yang pernah salah. Soal yang sudah dijawab benar tidak muncul lagi; kalau tidak dicentang, hanya soal yang belum pernah dikerjakan.</span></label>
+        </fieldset>
+      </div>
+      <div class="pilih-aksi">
+        <p id="pilih-info" aria-live="polite">Memuat daftar soal…</p>
+        <button type="button" class="tombol tombol-utama tombol-besar" id="mulai" disabled>Mulai latihan <span class="panah">→</span></button>
+      </div>
+
+      <section class="statistik" aria-labelledby="judul-statistik">
+        <p class="label" id="judul-statistik">Kemajuanmu di perangkat ini</p>
+        <div class="stat-grid">
+          <div class="stat"><b id="st-dijawab">0</b><span>jawaban tercatat</span></div>
+          <div class="stat"><b id="st-akurasi">–</b><span>jawaban benar</span></div>
+          <div class="stat"><b id="st-unik">0</b><span>soal berbeda dikerjakan</span></div>
+        </div>
+        <ul class="batang-daftar" id="st-topik"></ul>
+      </section>
+    </section>
+
+    <section id="sesi" class="sesi" hidden>
+      <div class="sesi-atas">
+        <button type="button" class="tombol-ikon" id="keluar" aria-label="Keluar dari latihan" title="Keluar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+        <div class="kemajuan" aria-hidden="true"><div class="kemajuan-isi" id="kemajuan"></div></div>
+        <span class="sesi-hitung" id="sesi-hitung">1/10</span>
+        <span class="sesi-waktu" id="sesi-waktu">00:00</span>
+      </div>
+      <article class="soal-kartu">
+        <div class="soal-kepala">
+          <p class="soal-label" id="soal-label"></p>
+          <button type="button" class="tombol-cepat" id="tombol-cepat" aria-expanded="false" aria-controls="cepat" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            <span>Cara cepat</span>
+          </button>
+        </div>
+        <div class="soal-teks" id="soal-teks"></div>
+        <div class="cepat" id="cepat" hidden>
+          <p class="cepat-judul">Cara cepat untuk soal ini</p>
+          <div class="cepat-isi" id="cepat-isi"></div>
+          <p class="cepat-catatan">Ini tekniknya, bukan jawabannya. Langkah lengkap muncul setelah kamu menjawab.</p>
+        </div>
+        <ol class="opsi-daftar" id="opsi"></ol>
+        <div class="bahas" id="bahas" hidden aria-live="polite">
+          <p class="bahas-hasil" id="bahas-hasil"></p>
+          <p class="petunjuk-teks" id="bahas-pilihanmu" hidden></p>
+          <div class="bahas-isi" id="bahas-isi"></div>
+          <details class="bahas-lain" id="bahas-lain-wadah"><summary id="bahas-lain-judul">Kenapa pilihan lain kurang tepat</summary><ul id="bahas-lain"></ul></details>
+        </div>
+        <div class="soal-aksi">
+          <button type="button" class="tombol tombol-utama" id="lanjut" disabled>Lanjut <span class="panah">→</span></button>
+        </div>
+      </article>
+      <p class="pintasan">Pintasan: <kbd>A</kbd>–<kbd>E</kbd> atau <kbd>1</kbd>–<kbd>5</kbd> untuk menjawab, <kbd>H</kbd> untuk cara cepat, <kbd>Enter</kbd> untuk lanjut.</p>
+    </section>
+
+    <section id="ringkas" class="ringkas" hidden>
+      <p class="label">Latihan selesai</p>
+      <p class="angka-besar"><span id="ringkas-skor">0</span><small id="ringkas-satuan">% benar</small></p>
+      <p class="pengantar" id="ringkas-pesan"></p>
+      <dl class="ringkas-angka">
+        <div><dt id="r-benar-label">benar</dt><dd id="r-benar">0</dd></div>
+        <div><dt id="r-salah-label">salah</dt><dd id="r-salah">0</dd></div>
+        <div><dt>rata-rata per soal</dt><dd id="r-waktu">0</dd></div>
+      </dl>
+      <div class="baris-aksi">
+        <button type="button" class="tombol tombol-utama" id="ulang-salah">Ulangi yang salah</button>
+        <button type="button" class="tombol tombol-garis" id="baru">Atur latihan baru</button>
+      </div>
+      <p class="label">Tinjau jawaban</p>
+      <div class="tinjau" id="ringkas-tinjau" style="margin-top:16px"></div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="kaki">
+  <div class="wadah kaki-grid">
+    <p>Abdi bukan situs resmi pemerintah. Info resmi: <a href="https://sscasn.bkn.go.id" rel="noopener" target="_blank">sscasn.bkn.go.id</a>.</p>
+    <p>Bank soal diperbarui <span data-dibuat>–</span>.</p>
+  </div>
+</footer>
+</body>
+</html>

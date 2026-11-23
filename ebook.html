@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Book — Abdi</title>
+<meta name="description" content="E-book materi TWK (Pancasila, UUD 1945, NKRI, simbol negara) dan SKB Teknik Informatika, dari dasar sampai siap menjawab soal.">
+<meta name="theme-color" content="#ebecee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2b2b2b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="ikon.svg" type="image/svg+xml">
+<script>try{var s=JSON.parse(localStorage.getItem('abdi:setelan')||'{}'),r=document.documentElement;if(s.tema&&s.tema!=='otomatis')r.dataset.tema=s.tema;if(s.skala)r.style.setProperty('--skala',s.skala)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="css/abdi.css">
+<script defer src="data/indeks.js"></script>
+<script defer src="js/inti.js"></script>
+<script defer src="js/ebook.js"></script>
+</head>
+<body>
+
+<header class="kepala">
+  <div class="wadah">
+    <a class="merek" href="index.html" aria-label="Abdi, ke beranda">abdi<i>.</i></a>
+    <nav class="nav" aria-label="Utama">
+      <a href="latihan.html">Latihan</a>
+      <a href="tryout.html">Tryout</a>
+      <a href="ebook.html" aria-current="page">E-Book</a>
+    </nav>
+    <div class="alat">
+      <details class="setel">
+        <summary class="tombol-ikon" aria-label="Setelan tampilan" title="Setelan tampilan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 12h3M11 12h9M4 17h11M19 17h1"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+        </summary>
+        <div class="setel-panel">
+          <div class="setel-baris"><span>Ukuran huruf</span>
+            <div class="setel-pilihan" data-setel="skala"><button type="button" data-nilai="0.9375">Kecil</button><button type="button" data-nilai="1">Sedang</button><button type="button" data-nilai="1.125">Besar</button><button type="button" data-nilai="1.25">Lebih</button></div></div>
+          <div class="setel-baris"><span>Tema</span>
+            <div class="setel-pilihan" data-setel="tema"><button type="button" data-nilai="otomatis">Otomatis</button><button type="button" data-nilai="terang">Terang</button><button type="button" data-nilai="gelap">Gelap</button></div></div>
+          <div class="setel-baris"><span>Istirahat mata</span>
+            <div class="setel-pilihan" data-setel="istirahat"><button type="button" data-nilai="true">Ingatkan</button><button type="button" data-nilai="false">Jangan</button></div>
+            <p class="setel-ket">Saat membaca atau latihan, tiap 30 menit muncul notif kecil di atas untuk istirahat sejenak.</p></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main class="halaman">
+  <div class="wadah">
+    <p class="label">E-Book</p>
+    <h1 class="judul-halaman">Belajar <em>dari nol</em>, lalu latih.</h1>
+    <p class="eb-pengantar">Materi lengkap untuk TWK dan SKB Teknik Informatika. Bunyi pasal UUD 1945 dan UU 24/2009 diambil langsung dari naskahnya, bukan diketik ulang. Tiap bab diakhiri tombol untuk langsung latihan soal topik itu.</p>
+
+    <div class="eb-buku" id="eb-buku" role="tablist" aria-label="Pilih buku"></div>
+
+    <div class="eb-tata">
+      <aside class="eb-samping" aria-label="Daftar bab">
+        <label class="eb-cari"><span class="sr">Cari di buku ini</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+          <input type="search" id="eb-cari" placeholder="Cari: angket, 28E, subnet…" autocomplete="off">
+        </label>
+        <p class="eb-kemajuan" id="eb-kemajuan" aria-live="polite"></p>
+        <details class="eb-daftar-wadah" id="eb-daftar-wadah" open>
+          <summary>Daftar bab</summary>
+          <ol class="eb-daftar" id="eb-daftar"></ol>
+        </details>
+      </aside>
+
+      <article class="eb-baca" id="eb-baca" aria-live="polite">
+        <p class="kosong">Memuat buku…</p>
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer class="kaki">
+  <div class="wadah kaki-grid">
+    <p>Abdi bukan situs resmi pemerintah. Info resmi: <a href="https://sscasn.bkn.go.id" rel="noopener" target="_blank">sscasn.bkn.go.id</a>.</p>
+    <p>Naskah UUD NRI 1945 dan UU 24/2009 dari Wikisumber (salinan terbitan resmi).</p>
+  </div>
+</footer>
+</body>
+</html>
